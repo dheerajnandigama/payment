@@ -1,3 +1,5 @@
+
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Router  } from '@angular/router';  
 @Component({
@@ -6,13 +8,19 @@ import { Router  } from '@angular/router';
   styleUrls: ['./transactions.component.css']
 })
 export class TransactionsComponent implements OnInit {
-
-  constructor(private router: Router, ) {}  
+  url:any;
+  alltransactions:any;
+  constructor(private router: Router,private http:HttpClient ) {
+    
+    this.url="http://localhost:8080/transactions/"+localStorage.getItem('customerid');
+  }  
     onSubmit() {  
         this.router.navigate(['/dashboard'])  
     }  
 
-  ngOnInit(): void {
+  ngOnInit(){
+    let response= this.http.get(this.url);
+    response.subscribe((data)=>this.alltransactions=data);
   }
 
 }

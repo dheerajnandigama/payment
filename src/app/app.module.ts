@@ -11,6 +11,10 @@ import { AboutComponent } from './about/about.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { TransactionsComponent } from './transactions/transactions.component';
 import { TransferComponent } from './transfer/transfer.component';
+import { HttpClientModule } from '@angular/common/http';
+import { DropdownComponent } from './dropdown/dropdown.component';
+import { LogoutComponent } from './logout/logout.component';
+import { SuccessComponent } from './success/success.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +25,10 @@ import { TransferComponent } from './transfer/transfer.component';
     AboutComponent,
     DashboardComponent,
     TransactionsComponent,
-    TransferComponent
+    TransferComponent,
+    DropdownComponent,
+    LogoutComponent,
+    SuccessComponent
     
   
   ],
@@ -29,6 +36,7 @@ import { TransferComponent } from './transfer/transfer.component';
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
+    HttpClientModule,
     RouterModule.forRoot([
       
     {
@@ -38,13 +46,22 @@ import { TransferComponent } from './transfer/transfer.component';
       path:'',component:AboutComponent
     },
     {
+      path:'about',component:AboutComponent
+    },
+    {
       path:'dashboard',component:DashboardComponent
+    },
+    {
+      path:'logout',component:LogoutComponent
     },
     {
       path:'transactions',component:TransactionsComponent
     },
     {
       path:'transfer',component:TransferComponent
+    },
+    {
+      path:'success',component:SuccessComponent
     },
   ])
   ],

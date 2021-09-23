@@ -9,7 +9,7 @@ export class HeaderComponent {
     constructor(){
         this.companyDetails={
             name:'DBS',
-            logo:"https://www.dbs.com/in/iwov-resources/flp/splitter/images/dbs_logo.svg"
+            logo:"https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/Faster_Payments_logo.svg/800px-Faster_Payments_logo.svg.png"
         }
     }
 }

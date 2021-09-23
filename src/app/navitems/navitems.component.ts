@@ -14,7 +14,6 @@ export class NavitemsComponent {
   cartTotal:any;
   constructor(private dataService:DataService) {
     this.currentDate= new Date();
-    this.countryList = this.dataService.getCountryList();
     this.country='';
     
     this.navitems = [{
@@ -24,6 +23,10 @@ export class NavitemsComponent {
     {
     text: "Dashboard",
       link: "dashboard"
+    },
+    {
+      text: "Logout",
+        link: "logout"
     },
     {
       text: "About",
